@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Layout from './Layout/Layout'
 import axios from 'axios'
 import useSWR from 'swr'
+import Link from 'next/link'
 
 const siteName = "HOME"
 const desc = "HOMEを表示"
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
   return (
     <Layout siteName={siteName} desc={desc}>
       <h1>{siteName}</h1>
+      <div><Link href={"Auth/Login"}>ログイン</Link></div>
       <h3>{data.test}</h3>
     </Layout>
   )
