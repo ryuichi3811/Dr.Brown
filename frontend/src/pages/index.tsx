@@ -5,12 +5,12 @@ import useSWR from 'swr'
 import Link from 'next/link'
 import Nav from '../components/nav/Nav'
 
-const siteName = "HOME"
-const desc = "HOMEを表示"
+const siteName = "トップ";
+const desc = "トップページ";
 
-const url = "http://localhost:8000"
+const url = "http://localhost:8000";
 
-const fetcher = (url: string) => axios.get(url).then(res => res.data)
+const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
 const Home: NextPage = () => {
   // データ取得
