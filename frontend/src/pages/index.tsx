@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   if (!data) return <div>少々お待ちください。。。</div>;
   // console.log(data)
   return (
-    <Layout siteName={siteName} desc={desc}>
+    <Layout siteName={siteName} desc={desc} pageName="home">
       <Nav />
       <h1>{siteName}</h1>
       <div>

@@ -5,10 +5,11 @@ import { ReactNode } from "react";
 export type Props ={
     siteName: string;
     desc: string;
+    pageName: string;
     children: ReactNode;
 }
 
-const Layout: NextPage<Props> = ({siteName, desc, children}) => {
+const Layout: NextPage<Props> = ({siteName, desc, pageName, children}) => {
     return (
         <>
             <Head>
@@ -17,7 +18,7 @@ const Layout: NextPage<Props> = ({siteName, desc, children}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
 
-            <main>
+            <main className={pageName}>
                 {children}
             </main>
 

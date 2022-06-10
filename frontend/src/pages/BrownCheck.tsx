@@ -8,7 +8,7 @@ const desc = "ミッキーを撮影し、画像判定結果を出すところ。
 
 const BrownCheck: NextPage = () => {
   return (
-    <Layout siteName={siteName} desc={desc}>
+    <Layout siteName={siteName} desc={desc} pageName="brownCheck">
       <Nav />
       <h1>{siteName}</h1>
       <div>

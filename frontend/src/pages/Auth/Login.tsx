@@ -8,7 +8,7 @@ const desc = "新規登録を行うページです。"
 const Login: NextPage = () => {
     return (
         
-        <LayoutAuth siteName={siteName} desc={desc}>
+        <LayoutAuth siteName={siteName} desc={desc} pageName="login">
             <Nav/>
             <h1>{siteName}</h1>
             <p>ログイン</p>

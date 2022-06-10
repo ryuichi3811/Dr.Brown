@@ -12,7 +12,7 @@ const desc = "個人情報を載せてるところ";
 
 const MyPage: NextPage = () => {
   return (
-    <Layout siteName={siteName} desc={desc}>
+    <Layout siteName={siteName} desc={desc} pageName="myPage">
       <Nav />
       <h1>{siteName}</h1>
       <div>

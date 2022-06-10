@@ -12,7 +12,7 @@ const desc = "ミッキーの今までの結果を一覧にしてるページ";
 
 const MyBorwnLog: NextPage = () => {
   return (
-    <Layout siteName={siteName} desc={desc}>
+    <Layout siteName={siteName} desc={desc} pageName="myBrownLog">
       <Nav />
       <h1>{siteName}</h1>
       <div>
