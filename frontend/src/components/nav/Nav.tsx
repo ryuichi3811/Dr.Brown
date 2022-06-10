@@ -15,7 +15,7 @@ const Nav: NextPage = () => {
         <NavList pageName="セルフチェック" pageLink="/SelfCheck" />
         <NavList pageName="ブラウンチェック" pageLink="/BrownCheck" />
         <NavList pageName="過去の記録" pageLink="/MyBorwnLog" />
-        <NavList pageName="マイページ" pageLink="/Mypage" />
+        <NavList pageName="マイページ" pageLink="/MyPage" />
       </ul>
     </nav>
   );
