@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
@@ -7,6 +8,14 @@ export type Props ={
     desc: string;
     pageName: string;
     children: ReactNode;
+}
+
+const classes = {
+    footer: css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    `
 }
 
 const Layout: NextPage<Props> = ({siteName, desc, pageName, children}) => {
@@ -22,7 +31,7 @@ const Layout: NextPage<Props> = ({siteName, desc, pageName, children}) => {
                 {children}
             </main>
 
-            <footer>
+            <footer css={classes.footer}>
                 <p>&copy; 2022 Dr.Brown All Rights Reserved.</p>
             </footer>
         </>

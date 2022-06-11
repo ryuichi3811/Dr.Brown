@@ -4,11 +4,18 @@ import axios from "axios";
 import useSWR from "swr";
 import Link from "next/link";
 import Nav from "../components/nav/Nav";
+import { css } from "@emotion/react";
 
 const siteName = "トップ";
 const desc = "トップページ";
 
 const url = "http://localhost:8000";
+
+const classes = {
+  main: css`
+    
+  `
+}
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
