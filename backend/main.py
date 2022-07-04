@@ -13,9 +13,23 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["application/json"],
+    allow_headers=["*"],
 )
 
 @app.get("/")
 def index():
-    return {"test": "title"}
+    todo = {
+        "todo":[
+            {
+                "id": 1,
+                "name": "洗濯",
+                "desc": "今日までにやる"
+            },
+            {
+                "id": 2,
+                "name": "ごはん食べる",
+                "desc": "今日までにやる"
+            }
+        ]
+        }
+    return todo

@@ -6,19 +6,19 @@ import { ReactNode } from "react";
 export type Props ={
     siteName: string;
     desc: string;
-    pageName: string;
     children: ReactNode;
 }
 
 const classes = {
     footer: css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 5%;
     `
 }
 
-const Layout: NextPage<Props> = ({siteName, desc, pageName, children}) => {
+const Layout: NextPage<Props> = ({siteName, desc, children}) => {
     return (
         <>
             <Head>
@@ -27,9 +27,7 @@ const Layout: NextPage<Props> = ({siteName, desc, pageName, children}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
 
-            <main className={pageName}>
-                {children}
-            </main>
+            {children}
 
             <footer css={classes.footer}>
                 <p>&copy; 2022 Dr.Brown All Rights Reserved.</p>

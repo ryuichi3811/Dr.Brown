@@ -3,7 +3,7 @@ import Layout from "./Layout/Layout";
 import axios from "axios";
 import useSWR from "swr";
 import Link from "next/link";
-import Nav from "../components/nav/Nav";
+import Header from "../components/header/Header";
 import { css } from "@emotion/react";
 
 const siteName = "トップ";
@@ -13,7 +13,13 @@ const url = "http://localhost:8000";
 
 const classes = {
   main: css`
-    
+  height: 100vh;
+  background-image: url("/homepink.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  `,
+  h1: css`
+    font-size: 5rem;
   `
 }
 
@@ -24,15 +30,18 @@ const Home: NextPage = () => {
   const { data, error } = useSWR(url, fetcher);
   if (error) return <div>読み込みに失敗しました。</div>;
   if (!data) return <div>少々お待ちください。。。</div>;
-  // console.log(data)
+  console.log(data)
+  
   return (
-    <Layout siteName={siteName} desc={desc} pageName="home">
-      <Nav />
-      <h1>{siteName}</h1>
-      <div>
-        <Link href={"Auth/Login"}>ログイン</Link>
-      </div>
-      <h3>{data.test}</h3>
+    <Layout siteName={siteName} desc={desc}>
+      <Header />
+
+      <main css={classes.main}>
+        <h1 css={classes.h1}>{siteName}</h1>
+        <div>
+          <Link href={"auth/Login"}>ログイン</Link>
+        </div>
+      </main>
     </Layout>
   );
 };

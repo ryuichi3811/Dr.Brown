@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Nav from "../../components/nav/Nav";
+import Header from "../../components/header/Header";
 import LayoutAuth from "../Layout/LayoutAuth";
 
 const siteName = "新規登録"
@@ -9,7 +9,7 @@ const Login: NextPage = () => {
     return (
         
         <LayoutAuth siteName={siteName} desc={desc} pageName="login">
-            <Nav/>
+            <Header/>
             <h1>{siteName}</h1>
             <p>ログイン</p>
         </LayoutAuth>
