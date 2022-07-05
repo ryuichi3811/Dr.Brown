@@ -1,39 +1,76 @@
-import { css } from "@emotion/react";
 import { NextPage } from "next";
 import Link from "next/link";
-import NavList from "./NavList";
+import { css } from "@emotion/react";
 
 const classes = {
-  header: css`
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 10%;
-  `,
-  ul: css`
-    display: flex;
-  `
+    // ヘッダー
+    header:css`
+      height  : 12vh;
+      width: 85vw;
+      background-color: #B5CDDE;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media(max-width: 1000px){
+        width: 100vw;
+      }
+    `,
+    h1:css`
+        font-size: 2rem;
+        margin-left: 2rem;
+    `,
+    mypage:css`
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      margin: 15px;
+    `,
+    accounticon:css`
+      display: inline-flex;
+      align-items: center;
+      padding:0 10px;
+    `,
+    login:css`
+        padding:0 10px;
+    `,
+    logout:css`
+        padding:0 10px;
+    `,
+    // 背景画像
+    backImg:css`
+      height: 88vh;
+      width: 85vw;
+      background-image: url("./homepink.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      @media(max-width: 1000px){
+        width: 100vw;
+      }
+    `
 }
 
-const Nav: NextPage = () => {
-  return (
-    <header css={classes.header}>
-      {/* ロゴ */}
-      <h1>
-        <Link href={"/"}>Dr.Brown</Link>
-      </h1>
+const TopContent = () => {
+    return (
+        <div>
+            <header css={classes.header}>
+                <h1 css={classes.h1}>HOME</h1>
 
-      <nav>
-        <ul css={classes.ul}>
-          <NavList pageName="トップ" pageLink="/" />
-          <NavList pageName="セルフチェック" pageLink="/SelfCheck" />
-          <NavList pageName="ブラウンチェック" pageLink="/BrownCheck" />
-          <NavList pageName="過去の記録" pageLink="/MyBorwnLog" />
-          <NavList pageName="マイページ" pageLink="/MyPage" />
-        </ul>
-      </nav>
-    </header>
-  );
-};
+                <div css={classes.mypage}>
+                  <div css={classes.accounticon}>アカウント</div>
+                  <div css={classes.login}>
+                    <Link href={"auth/Login"}>ログイン</Link>
+                  </div>
+                  <div css={classes.logout}>ログアウト</div>
+                </div>
+                
+            </header>
 
-export default Nav;
+            <main>
+              <div css={classes.backImg}></div>
+            </main>
+        </div>
+    );
+}
+
+export default TopContent;

@@ -5,6 +5,9 @@ import useSWR from "swr";
 import Link from "next/link";
 import Header from "../components/header/Header";
 import { css } from "@emotion/react";
+import NavList from "../components/header/NavList";
+import Sidebar from "../components/header/Sidebar";
+
 
 const siteName = "トップ";
 const desc = "トップページ";
@@ -12,16 +15,29 @@ const desc = "トップページ";
 const url = "http://localhost:8000";
 
 const classes = {
-  main: css`
-  height: 100vh;
-  background-image: url("/homepink.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  backcolor:css`
+    background-color: #EBF0F4;
+    opacity: 0.88;
   `,
-  h1: css`
-    font-size: 5rem;
-  `
-}
+  flex:css`
+    display: flex;
+    
+    @media(max-width: 1000px){
+      width: 100%;
+    }
+  `,
+  mobileChange:css`
+    @media(max-width: 1000px){
+      display: none;
+    }
+  `,
+  container:css`
+    @media(max-width: 1000px){
+      width: 100%;
+    }
+  `,
+
+ }
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
@@ -34,14 +50,12 @@ const Home: NextPage = () => {
   
   return (
     <Layout siteName={siteName} desc={desc}>
-      <Header />
-
-      <main css={classes.main}>
-        <h1 css={classes.h1}>{siteName}</h1>
-        <div>
-          <Link href={"auth/Login"}>ログイン</Link>
-        </div>
-      </main>
+          <div css={classes.flex}>
+            <div css={classes.mobileChange}>
+              <Sidebar />
+            </div>
+            <Header />
+          </div>
     </Layout>
   );
 };

@@ -23,6 +23,7 @@ const NavList: NextPage<Props> = ({ pageName, pageLink }) => {
     <li css={classes.li}>
       <Link href={pageLink}>{pageName}</Link>
     </li>
+    
   );
 };
 
