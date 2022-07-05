@@ -97,7 +97,7 @@
 # # Celery stuff
 # celerybeat-schedule
 # celerybeat.pid
-
+.next
 # # SageMath parsed files
 # *.sage.py
 
