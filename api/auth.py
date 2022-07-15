@@ -9,6 +9,7 @@ router = APIRouter(
     tags=["Auth"]
 )
 
+
 @router.post('/login/')
 async def login(request: OAuth2PasswordRequestForm = Depends()):
     query = User.select().where(User.c.email == request.username)

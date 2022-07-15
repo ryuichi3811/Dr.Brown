@@ -20,24 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def index():
-    todo = {
-        "todo":[
-            {
-                "id": 1,
-                "name": "洗濯",
-                "desc": "今日までにやる"
-            },
-            {
-                "id": 2,
-                "name": "ごはん食べる",
-                "desc": "今日までにやる"
-            }
-        ]
-        }
-    return todo
-
 @app.on_event('startup')
 async def startup():
     await database.connect()

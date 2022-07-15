@@ -10,6 +10,23 @@ router = APIRouter(
     tags=["Users"]
 )
 
+@router.get("/")
+async def index():
+    todo = {
+        "todo":[
+            {
+                "id": 1,
+                "name": "洗濯",
+                "desc": "今日までにやる"
+            },
+            {
+                "id": 2,
+                "name": "ごはん食べる",
+                "desc": "今日までにやる"
+            }
+        ]
+        }
+    return todo
 
 @router.post('/users', status_code=status.HTTP_201_CREATED, response_model=UserSchema)
 async def create(user: UserSchemaIn, current_user: UserSchema = Depends(get_current_user)):
