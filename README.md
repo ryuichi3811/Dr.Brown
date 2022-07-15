@@ -4,9 +4,6 @@
 # 環境設定
 ### frontend
 ```
-
-cd frontend
-
 yarn
 
 yarn dev
@@ -15,6 +12,7 @@ yarn dev
 
 ### backend
 ```
+cd api
 
 .venv\Scripts\activate.bat
 
