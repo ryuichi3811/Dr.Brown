@@ -37,17 +37,6 @@ const classes = {
     logout:css`
         padding:0 10px;
     `,
-    // 背景画像
-    backImg:css`
-      height: 88vh;
-      width: 85vw;
-      background-image: url("./homepink.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      @media(max-width: 1000px){
-        width: 100vw;
-      }
-    `
 }
 
 const TopContent = () => {
@@ -66,9 +55,6 @@ const TopContent = () => {
                 
             </header>
 
-            <main>
-              <div css={classes.backImg}></div>
-            </main>
         </div>
     );
 }
