@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-databases
-sqlalchemy
-pydantic
-mysqlclient
