@@ -3,14 +3,14 @@ import { NextPage } from "next";
 import Layout from "./Layout/Layout";
 
 const pageProps = {
-  name: "撮影診断",
-  desc: "あなたのブラウン君から健康状態を調べるよ",
-  bgImg: "url('./bgImg/hospital.jpg')",
+  name: "過去の診断",
+  desc: "あなたの過去の診断結果を見てみるよ。",
+  bgImg: "url('./bgImg/homesilver.jpg')",
 };
 
 const classes = {};
 
-const BrownCheck: NextPage = () => {
+const MyBrownLog: NextPage = () => {
   return (
     <Layout
       siteName={pageProps.name}
@@ -22,4 +22,4 @@ const BrownCheck: NextPage = () => {
   );
 };
 
-export default BrownCheck;
+export default MyBrownLog;

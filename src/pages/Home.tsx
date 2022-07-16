@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Layout from "./Layout/Layout";
 
 const pageProps = {
-  name: "Home",
+  name: "HOME",
   desc: "トップページ",
   bgImg: "url('./bgImg/homepink.jpg')",
 };

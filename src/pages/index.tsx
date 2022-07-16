@@ -6,11 +6,11 @@ import Link from "next/link";
 import Header from "../components/header/Header";
 import { css } from "@emotion/react";
 import NavList from "../components/header/NavList";
-import Sidebar from "../components/header/Sidebar";
 
 
 const siteName = "トップ";
 const desc = "トップページ";
+const bgImg = "url('./bgImg/homepink.jpg')"
 
 const url = "http://localhost:8000";
 
@@ -49,12 +49,10 @@ const Home: NextPage = () => {
   console.log(data)
   
   return (
-    <Layout siteName={siteName} desc={desc}>
+    <Layout siteName={siteName} desc={desc} bgDesign={bgImg}>
           <div css={classes.flex}>
             <div css={classes.mobileChange}>
-              <Sidebar />
             </div>
-            <Header />
           </div>
     </Layout>
   );
