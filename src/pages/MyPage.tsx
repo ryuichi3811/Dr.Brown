@@ -1,23 +1,23 @@
-import type { NextPage } from "next";
+import { css } from "@emotion/react";
+import { NextPage } from "next";
 import Layout from "./Layout/Layout";
-import Link from "next/link";
-import Header from "../components/header/Header";
 
-const siteName = "マイページ";
-const desc = "個人情報を載せてるところ";
+const pageProps = {
+  name: "MYPAGE",
+  desc: "あなたの情報をまとめているよ",
+  bgImg: "url('./bgImg/room.jpg')",
+};
 
-// ユーザーのログインのアカウントに飛ばしてから表示されるページなので、
-// lacalhost:3000/uuid/Mypage
-// なお、これだけでなくメインページはおもにこの流れです。
+const classes = {};
 
 const MyPage: NextPage = () => {
   return (
-    <Layout siteName={siteName} desc={desc}>
-      <Header />
-      <h1>{siteName}</h1>
-      <div>
-        <Link href={"auth/Login"}>ログイン</Link>
-      </div>
+    <Layout
+      siteName={pageProps.name}
+      desc={pageProps.desc}
+      bgDesign={pageProps.bgImg}
+    >
+      enter
     </Layout>
   );
 };
