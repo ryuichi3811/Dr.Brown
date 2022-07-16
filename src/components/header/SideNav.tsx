@@ -29,6 +29,11 @@ const menu = {
     link: "/MyBrownLog",
     icon: "url(./icon/past2.jpg)",
   },
+  kame: {
+    name: "🐢カメ🐢",
+    link: "/SelfCheck",
+    icon: "url(./icon/monshin2.jpg)",
+  },
 };
 
 const classes = {
@@ -86,6 +91,11 @@ const SideNav: NextPage = () => {
             name={menu.past.name}
             link={menu.past.link}
             icon={menu.past.icon}
+          />
+          <NavList
+            name={menu.kame.name}
+            link={menu.kame.link}
+            icon={menu.kame.icon}
           />
         </ul>
       </nav>

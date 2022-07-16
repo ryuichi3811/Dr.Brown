@@ -16,7 +16,7 @@ const classes = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
     z-index: 10;
     @media (max-width: 1000px) {
       width: 100vw;
@@ -44,7 +44,8 @@ const classes = {
     text-align: center;
     display: inline-flex;
     align-items: center;
-    margin: 15px;
+    position: fixed;
+    right: 3%;
   `,
   accountIcon: css`
     display: flex;

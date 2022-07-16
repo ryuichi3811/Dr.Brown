@@ -23,19 +23,17 @@ const classes = {
   sideNav: css`
     height: 100vh;
     min-width: 300px;
-    position: relative;
+    position: fixed;
     z-index: 10;
     @media (max-width: 1000px) {
       display: none;
     }
   `,
-  sideNavCover: css`
-    position: absolute;
+  sideNavBase: css`
     height: 100vh;
     min-width: 300px;
-    opacity: 0.9;
-    background-color: #eee;
-    z-index: -10;
+    position: relative;
+    z-index: 10;
     @media (max-width: 1000px) {
       display: none;
     }
@@ -54,6 +52,12 @@ const classes = {
     @media (max-width: 1000px) {
       width: 100vw;
     }
+  `,
+  headerBase: css`
+  color: #eee;
+  height: 10vh;
+  width: 100%;
+  position: relative;
   `,
   footer: css`
     position: absolute;
@@ -83,12 +87,13 @@ const Layout: NextPage<Props> = ({ siteName, desc, bgDesign, children }) => {
         css={classes.layout}
         // style={{ backgroundImage: `${bgDesign}` }}
       >
+        <div css={classes.sideNavBase}></div>
         <div css={classes.sideNav}>
-          <div css={classes.sideNavCover}></div>
           <SideNav></SideNav>
         </div>
         <div css={classes.container}>
           <Headers name={siteName} />
+          <div css={classes.headerBase}></div>
           <main
             css={classes.content}
             style={{ backgroundImage: `${bgDesign}` }}
