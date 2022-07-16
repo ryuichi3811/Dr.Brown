@@ -6,27 +6,27 @@ import NavList from "./NavList";
 const menu = {
   home: {
     name: "HOME",
-    link: "./Home",
+    link: "/Home",
     icon: "url(./icon/home.jpg)",
   },
   photo: {
     name: "撮影診断",
-    link: "./BrownCheck",
+    link: "/BrownCheck",
     icon: "url(./icon/camera2.jpg)",
   },
   dailyCheck: {
     name: "今日の体調",
-    link: "./DailyCheck",
+    link: "/DailyCheck",
     icon: "url(./icon/monshin2.jpg)",
   },
   healthCheck: {
     name: "健康診断",
-    link: "./HealthCheck",
+    link: "/HealthCheck",
     icon: "url(./icon/monshin2.jpg)",
   },
   past: {
     name: "過去の診断",
-    link: "./MyBrownLog",
+    link: "/MyBrownLog",
     icon: "url(./icon/past2.jpg)",
   },
 };
