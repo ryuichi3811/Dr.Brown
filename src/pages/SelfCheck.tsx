@@ -15,8 +15,11 @@ export type Props = {
   siteName: String
 }
 
-const siteName = 'セルフチェック'
-const desc = '問診機能のページ'
+const pageProps = {
+  name: "健康診断",
+  desc: "あなたの健康リスクを調べてみるよ。",
+  bgImg: "url('./bgImg/hospital.jpg')",
+};
 
 const crasses = {
   wrap: css`
@@ -49,9 +52,13 @@ const style = {
 const SelfCheck: NextPage = () => {
   return (
     <>
-      <Layout siteName={siteName} desc={desc}>
+      <Layout
+        siteName={pageProps.name}
+        desc={pageProps.desc}
+        bgDesign={pageProps.bgImg}
+      >
         <div css={crasses.wrap}>
-          <h1 css={crasses.h1}>{siteName}</h1>
+          <h1 css={crasses.h1}>{pageProps.name}</h1>
           <div css={crasses.form}>
             <FormControl sx={style}>
               <FormLabel id='When_did_the_symptoms_start'>
