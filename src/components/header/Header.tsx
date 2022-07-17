@@ -75,7 +75,7 @@ const TopContent: NextPage<Props> = ({ name }) => {
           </div>
         </Link>
         <div css={classes.login}>
-          <Link href={"auth/Login"}>ログイン</Link>
+          <Link href={"/Auth/Login"}>ログイン</Link>
         </div>
         <div css={classes.logout}>ログアウト</div>
       </div>
