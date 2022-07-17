@@ -52,7 +52,7 @@ const classes = {
   `,
   content: css`
     width: 70%;
-    height: 60vh;
+    height: 65vh;
     background-color: #eee;
     border: #e0e0e0 2px solid;
     margin-bottom: 50px;
@@ -62,11 +62,11 @@ const classes = {
     flex-direction: column;
   `,
   footer: css`
-    position: fixed;
+    position: absolute;
     width: 300px;
     height: 16px;
     bottom: 1%;
-    left: 10%;
+    left: 1%;
   `,
 };
 
@@ -89,14 +89,20 @@ const LayoutAuth: NextPage<Props> = ({ siteName, desc, children }) => {
       >
         <div css={classes.container}>
           <div css={classes.logo}></div>
-          <div css={classes.content}>
+          <div
+            css={classes.content}
+            style={
+              router.pathname == "/Auth/Login"
+                ? { height: "60vh" }
+                : { height: "80vh" }
+            }
+          >
             <h1 css={classes.h1}>{siteName}</h1>
             {children}
           </div>
         </div>
       </main>
-
-      <footer>
+      <footer css={classes.footer}>
         <p>&copy; 2022 Dr.Brown All Rights Reserved.</p>
       </footer>
     </>

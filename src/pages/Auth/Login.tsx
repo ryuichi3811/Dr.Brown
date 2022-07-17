@@ -66,7 +66,7 @@ const Login: NextPage = () => {
           css={classes.input}
           type="email"
           placeholder="メールアドレスを入力してください。"
-          {...register("メールアドレスを入力してください。", {
+          {...register("email", {
             required: true,
           })}
         />
@@ -74,7 +74,7 @@ const Login: NextPage = () => {
           css={classes.input}
           type="password"
           placeholder="パスワードを入力してください。"
-          {...register("パスワードを入力してください。", { required: true })}
+          {...register("password", { required: true })}
         />
 
         <input css={classes.button} type="submit" />
