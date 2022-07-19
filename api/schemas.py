@@ -15,7 +15,7 @@ class UserSchemaIn(BaseModel):
     name: str
     email: str
     birthday: date
-    sex: bool
+    sex: str
     password: str
     
 
@@ -25,7 +25,7 @@ class UserSchema(BaseModel):
     name: str
     email: str
     birthday: date
-    sex: bool
+    sex: str
 
 
 class LoginSchema(BaseModel):

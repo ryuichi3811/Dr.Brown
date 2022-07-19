@@ -29,7 +29,7 @@ async def index():
     return todo
 
 @router.post('/users', status_code=status.HTTP_201_CREATED, response_model=UserSchema)
-async def create(user: UserSchemaIn, current_user: UserSchema = Depends(get_current_user)):
+async def create(user: UserSchemaIn):
     hashed_password = pbkdf2_sha256.hash(user.password)
     query = User.insert().values(
         name = user.name,
@@ -43,13 +43,13 @@ async def create(user: UserSchemaIn, current_user: UserSchema = Depends(get_curr
 
 
 @router.get('/users', response_model=List[UserSchema])
-async def index(current_user: UserSchema = Depends(get_current_user)):
+async def index():
     query = User.select()
     return await database.fetch_all(query=query)
 
     
 @router.get('/users/{id}/', response_model=UserSchema)
-async def read(id: int, current_user: UserSchema = Depends(get_current_user)):
+async def read(id: int):
     query = User.select().where(id == User.c.id)
     myuser = await database.fetch_one(query)
 
@@ -59,14 +59,14 @@ async def read(id: int, current_user: UserSchema = Depends(get_current_user)):
     
 
 @router.put('/users/{id}/', response_model=UserSchema)
-async def updata(id: int, user: UserSchemaIn, current_user: UserSchema = Depends(get_current_user)):
+async def updata(id: int, user: UserSchemaIn):
     query = User.update().where(User.c.id == id).values(title=user.name)
     await database.execute(query)
     return {**user.dict(), "id": id}
 
 
 @router.delete('/users/{id}/', status_code=status.HTTP_204_NO_CONTENT)
-async def delete(id: int, current_user: UserSchema = Depends(get_current_user)):
+async def delete(id: int):
     query = User.delete().where(User.c.id == id)
     await database.execute(query)
     return {"result": "Users deleted"}

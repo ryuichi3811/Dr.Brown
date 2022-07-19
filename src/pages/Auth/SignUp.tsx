@@ -1,6 +1,9 @@
 import { css } from "@emotion/react";
+import axios from "axios";
 import { NextPage } from "next";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
 import LayoutAuth from "../Layout/LayoutAuth";
 
 const pageProps = {
@@ -53,14 +56,27 @@ const classes = {
   `,
 };
 
+const url = 'http://localhost:8000/users/';
+
 const Login: NextPage = () => {
+  const [post, setPost] = useState(null);
+
+  const createUser = (data: any) => {
+    axios.post(url, data).then((res) => {
+      setPost(res.data);
+    });
+  };
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => createUser(data);
   console.log(errors);
+
+  console.log(post);
+
   return (
     <LayoutAuth siteName={pageProps.name} desc={pageProps.desc}>
       <form css={classes.form} onSubmit={handleSubmit(onSubmit)}>
