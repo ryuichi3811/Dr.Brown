@@ -44,7 +44,7 @@ const classes = {
     &:hover {
       cursor: pointer;
       & > div {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
     }
     &:hover:after {
@@ -105,7 +105,7 @@ const classes = {
   menuName: css`
     width: 140px;
     padding-left: 10px;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     letter-spacing: 1px;
     transition: 0.1s;
   `,
@@ -122,6 +122,7 @@ const NavList: NextPage<Props> = ({ name, link, icon }) => {
             <p>{name}</p>
           </div>
         </li>
+
       </Link>
     </>
   );
