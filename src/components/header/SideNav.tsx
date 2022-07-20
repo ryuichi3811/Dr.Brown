@@ -41,7 +41,7 @@ const classes = {
     width: 100%;
     height: 12%;
     background-image: url("../logo/logo1.jpg");
-    background-size: 90%;
+    background-size: contain;
     background-position: 50% -25%;
     background-repeat: no-repeat;
     &:hover {

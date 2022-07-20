@@ -2,6 +2,8 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { css } from "@emotion/react";
 import PersonIcon from "@mui/icons-material/Person";
+import MobileBottomNav from "./MobileBottomNav";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export type Props = {
   name: string;
@@ -37,7 +39,7 @@ const classes = {
   `,
   h1: css`
     font-size: 2.5rem;
-    margin-left: 8rem;
+    margin-left: 10%;
     letter-spacing: 1.8px;
   `,
   myPage: css`
@@ -46,6 +48,9 @@ const classes = {
     align-items: center;
     position: fixed;
     right: 3%;
+    @media (max-width: 481px) {
+      display: none;
+    }
   `,
   accountIcon: css`
     display: flex;
@@ -59,6 +64,13 @@ const classes = {
   logout: css`
     padding: 0 10px;
   `,
+  MenuIcon:css`
+  @media(min-width: 480px){
+    display: none;
+  }
+  text-align: center;
+  margin: 0 0 0 15%;
+`,
 };
 
 const TopContent: NextPage<Props> = ({ name }) => {
@@ -70,15 +82,21 @@ const TopContent: NextPage<Props> = ({ name }) => {
       <div css={classes.myPage}>
         <Link href="./MyPage">
           <div css={classes.accountIcon}>
-            <PersonIcon style={{ fontSize: "80px", color: "#CDE9FE" }} />
+            <PersonIcon style={{ fontSize: "50px", color: "#CDE9FE" }} />
             <p style={{marginTop: "-10px"}}>マイページ</p>
           </div>
         </Link>
+        
         <div css={classes.login}>
           <Link href={"/Auth/Login"}>ログイン</Link>
         </div>
         <div css={classes.logout}>ログアウト</div>
+        
       </div>
+      
+      <div css={classes.MenuIcon}><MenuIcon style={{ fontSize: "50px", color: "#CDE9FE" }} /></div>
+      
+      <MobileBottomNav />
     </header>
   );
 };

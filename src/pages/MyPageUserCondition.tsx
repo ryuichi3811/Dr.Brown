@@ -1,7 +1,7 @@
-import { css } from "@emotion/react";
-import { NextPage } from "next";
-import MainMyPage from "../components/myPage/MainMyPage";
+import type { NextPage } from "next";
 import Layout from "./Layout/Layout";
+import { css } from "@emotion/react";
+import MyPageUserCondition from "../components/myPage/MyPageUserCondition";
 
 const pageProps = {
   name: "MYPAGE",
@@ -9,9 +9,11 @@ const pageProps = {
   bgImg: "url('./bgImg/room.jpg')",
 };
 
-const classes = {};
+const classes = {
+ }
 
-const MyPage: NextPage = () => {
+
+const MyPagePassChange: NextPage = () => {
   return (
     <Layout
       siteName={pageProps.name}
@@ -19,10 +21,10 @@ const MyPage: NextPage = () => {
       bgDesign={pageProps.bgImg}
     >
     
-    <MainMyPage />
+    <MyPageUserCondition />
     
     </Layout>
   );
 };
 
-export default MyPage;
+export default MyPagePassChange;
