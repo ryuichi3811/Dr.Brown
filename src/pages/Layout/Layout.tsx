@@ -63,7 +63,7 @@ const classes = {
     position: absolute;
     z-index: 1;
     bottom: 1%;
-    right: 3%;
+    left: 1.5%;
   `,
 };
 

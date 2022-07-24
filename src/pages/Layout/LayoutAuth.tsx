@@ -67,6 +67,9 @@ const classes = {
     height: 16px;
     bottom: 1%;
     left: 1%;
+    @media(max-width: 480px){
+      display: none;
+    }
   `,
 };
 

@@ -36,7 +36,7 @@ export default function FormDialog() {
     <div>
 
       {/* 変更ボタン */}
-      <Button variant="contained" onClick={handleClickOpen}>プロフィールを変更する</Button>
+      <Button variant="contained" onClick={handleClickOpen}>プロフィールを変更</Button>
         
 
       {/* ユーザー名　メールアドレス　テキストボックス */}
