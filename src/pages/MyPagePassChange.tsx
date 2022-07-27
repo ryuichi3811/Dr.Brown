@@ -8,7 +8,7 @@ const classes = {
 }
 
 const pageProps = {
-  name: "MYPAGECondition",
+  name: "MYPAGE",
   desc: "あなたの情報をまとめているよ",
   bgImg: "url('./bgImg/room.jpg')",
 };

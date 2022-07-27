@@ -4,10 +4,10 @@ import { css } from "@emotion/react";
 
 const classes= {
     mobileNav:css`
-      @media(min-width: 781px){
+      @media(min-width: 921px){
         display: none;
       }
-      @media(max-width: 780px){
+      @media(max-width: 920px){
         height: 8vh;
         position: fixed;
         display: block;
@@ -23,7 +23,7 @@ const classes= {
     }
     `,
     mobileNavUl:css`
-    @media(max-width: 780px){
+    @media(max-width: 920px){
       list-style: none;
       padding: 0;
       margin: 0;
@@ -32,7 +32,7 @@ const classes= {
     }
     `,
     mobileNavLi:css`
-      @media(max-width: 780px){
+      @media(max-width: 920px){
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -46,7 +46,7 @@ const classes= {
       line-height: 1.2;
     `,
     homeImg:css`
-      @media(max-width: 780px){
+      @media(max-width: 920px){
         height: 8vh;
         width: 8vw;
         background-image: url("icon/home.jpg");
@@ -57,7 +57,7 @@ const classes= {
       }
     `,
     cameraImg:css`
-    @media(max-width: 780px){
+    @media(max-width: 920px){
         height: 8vh;
         width: 8vw;
         background-image: url("icon/camera2.jpg");
@@ -66,7 +66,7 @@ const classes= {
       }
     `,
     selfImg:css`
-    @media(max-width: 780px){
+    @media(max-width: 920px){
         height: 8vh;
         width: 8vw;
         background-image: url("icon/monshin2.jpg");
@@ -75,7 +75,7 @@ const classes= {
     }
     `,
     pastImg:css`
-    @media(max-width: 780px){
+    @media(max-width: 920px){
         height: 8vh;
         width: 8vw;
         background-image: url("icon/past2.jpg");

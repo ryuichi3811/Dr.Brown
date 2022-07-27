@@ -17,20 +17,20 @@ import MyPageUserInfoChange from "./MyPageUserInfoChange";
 //アイコン
 import MonitorWeightIcon from '@mui/icons-material/MonitorWeight';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 import CleanHandsIcon from '@mui/icons-material/CleanHands';
 import WomanIcon from '@mui/icons-material/Woman';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import PregnantWomanIcon from '@mui/icons-material/PregnantWoman';
+import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation';
 
 
 const classes ={
-    box:css`
-    `,
     tab:css`
         margin: 0 50px;
     `,
-    avatarBack:css`
-        margin-top: 50px;
+    avatar:css`
+        margin-top: 80px;
         display: grid;
         gap: 40px;
         justify-items: center;
@@ -47,7 +47,7 @@ const classes ={
         width: 150px;  
         border-radius: 50%;
         padding: 16px;
-        background-color: #ee8193;
+        background-color: rgba(149, 76, 233, 0.8);
         color: #ffffff;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -74,7 +74,7 @@ const classes ={
         font-size: 1.2rem;
     `,
     table:css`
-        margin-top: 80px;
+        margin-top: 100px;
     `
 }
 
@@ -96,6 +96,7 @@ interface TabPanelProps {
     createData('メールアドレス', 'xxxx@xx.xx.xx'),
     createData('生年月日', 'xx/xx/xx'),
     createData('性別', '男'),
+    createData(<MyPageUserInfoChange />,<Link href="./MyPagePassChange"><Button variant="outlined">パスワード変更</Button></Link>)
   ];
 
   function TabPanel(props: TabPanelProps) {
@@ -143,7 +144,6 @@ interface TabPanelProps {
     };
 
     return (
-        <div css={classes.box}>
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ bgcolor: 'background.paper',borderBottom: 1, borderColor: 'divider' }}>
 
@@ -164,15 +164,15 @@ interface TabPanelProps {
 
                 <TabPanel value={value} index={0}>
                     {/* 体の調子 */}
-                    <div css={classes.avatarBack}>
+                    <div css={classes.avatar}>
                         <Link href="./MyPageUserCondition"><div css= {classes.Icon}><MonitorWeightIcon sx={{ width: 100, height: 100, color: 'white' }}/>体重</div></Link>
                         <Link href="./MyPageUserCondition"><div css= {classes.Icon}><DeviceThermostatIcon sx={{ width: 100, height: 100, color: 'white'}}/>体温</div></Link>
-                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><RestaurantMenuIcon sx={{ width: 100, height: 100 , color: 'white'}}/>食事量</div></Link>
+                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><RiceBowlIcon sx={{ width: 100, height: 100 , color: 'white'}}/>食事量</div></Link>
                         <Link href="./MyPageUserCondition"><div css= {classes.Icon}><TagFacesIcon sx={{ width: 100, height: 100, color: 'white' }}/>体調</div></Link>
-                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><CleanHandsIcon sx={{ width: 100, height: 100, color: 'white' }}/>お腹の調子</div></Link>
+                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><PregnantWomanIcon sx={{ width: 100, height: 100, color: 'white' }}/>お腹の調子</div></Link>
                         <Link href="./MyPageUserCondition"><div css= {classes.Icon}><CleanHandsIcon sx={{ width: 100, height: 100, color: 'white' }}/>肌の調子</div></Link>
                         <Link href="./MyPageUserCondition"><div css= {classes.Icon}><WomanIcon sx={{ width: 100, height: 100, color: 'white' }}/>生理</div></Link>
-                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><MonitorWeightIcon sx={{ width: 100, height: 100, color: 'white' }}/>便</div></Link>
+                        <Link href="./MyPageUserCondition"><div css= {classes.Icon}><BabyChangingStationIcon sx={{ width: 100, height: 100, color: 'white' }}/>便</div></Link>
                     </div>
                 </TabPanel>
 
@@ -198,15 +198,11 @@ interface TabPanelProps {
 
                             </Table>
                         </TableContainer> 
-
-                        <div css={classes.changeButton}><MyPageUserInfoChange /></div>
-                        <div css={classes.changePass}><Link href="./MyPagePassChange"><Button variant="outlined">パスワード変更したい方はこちら</Button></Link></div>
                         
                     </div>
 
                 </TabPanel>
             </Box>
-      </div>
     );
   }
   

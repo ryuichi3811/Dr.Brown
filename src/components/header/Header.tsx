@@ -83,7 +83,6 @@ const TopContent: NextPage<Props> = ({ name }) => {
         <Link href="./MyPage">
           <div css={classes.accountIcon}>
             <PersonIcon style={{ fontSize: "50px", color: "#CDE9FE" }} />
-            <p style={{marginTop: "-10px"}}>マイページ</p>
           </div>
         </Link>
         

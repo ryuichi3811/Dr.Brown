@@ -1,43 +1,52 @@
 import { NextPage } from "next";
 import * as React from 'react';
 import { css } from "@emotion/react";
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import InputAdornment from '@mui/material/InputAdornment';
-import InputLabel from '@mui/material/InputLabel';
-import Input from '@mui/material/Input';
+import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
-import FilledInput from '@mui/material/FilledInput';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
 
 const classes = {
     box:css`
-        text-align: center;
-    `,
-    changeButton:css`
-        margin-top: 40px;
+        padding-top: 100px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    `,
+    title:css`
+      font-size: 1.5rem;
+    `,
+    passInput:css`
+        text-align: center;
+        display: block;
+    `,
+    passLabel:css`
+    @media(max-width: 480px){
+      font-size: 0.8rem;
+    }
     `
 }
 
 interface State {
-  amount: string;
   password: string;
-  weight: string;
-  weightRange: string;
+  password2: string;
+  password3: string;
   showPassword: boolean;
 }
 
 export default function InputAdornments() {
   const [values, setValues] = React.useState<State>({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
+    password2: '',
+    password3: '',
     showPassword: false,
   });
 
@@ -59,60 +68,22 @@ export default function InputAdornments() {
 
   return (
     <div css={classes.box}>
-            <Box>
-              <FormControl sx={{ m: 1, width: '60%' }} variant="filled">
-                <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-                <FilledInput
-                  id="filled-adornment-password"
-                  type={values.showPassword ? 'text' : 'password'}
-                  value={values.password}
-                  onChange={handleChange('password')}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                />
-              </FormControl>
-            </Box>
-        
-            <Box>
-            <FormControl sx={{ m: 1, width: '60%' }} variant="filled">
-                <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-                <FilledInput
-                  id="filled-adornment-password"
-                  type={values.showPassword ? 'text' : 'password'}
-                  value={values.password}
-                  onChange={handleChange('password')}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                />
-              </FormControl>
-            </Box>
+      <Box sx={{ width: '100%', maxWidth: '80%', bgcolor: 'background.paper' }}>
+      <nav aria-label="main mailbox folders" >
+          <List>
+            <ListItem css={classes.passInput} disablePadding>
+              <p css={classes.title}>パスワード変更</p>
+            </ListItem>
+          </List>
+        </nav>
 
-        
-            <Box>
-            <FormControl sx={{ m: 1, width: '60%' }} variant="filled">
-                <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-                <FilledInput
-                  id="filled-adornment-password"
+        <nav aria-label="main mailbox folders" >
+          <List>
+            <ListItem css={classes.passInput} disablePadding>
+              <FormControl  sx={{ m: 1, width: '80%' }} variant="standard">
+              <InputLabel css={classes.passLabel} htmlFor="standard-adornment-password">現在のパスワード</InputLabel>
+                <Input
+                  id="standard-adornment-password"
                   type={values.showPassword ? 'text' : 'password'}
                   value={values.password}
                   onChange={handleChange('password')}
@@ -122,7 +93,6 @@ export default function InputAdornments() {
                         aria-label="toggle password visibility"
                         onClick={handleClickShowPassword}
                         onMouseDown={handleMouseDownPassword}
-                        edge="end"
                       >
                         {values.showPassword ? <VisibilityOff /> : <Visibility />}
                       </IconButton>
@@ -130,9 +100,73 @@ export default function InputAdornments() {
                   }
                 />
               </FormControl>
-            </Box>
-
-            <div css={classes.changeButton}><Button variant="contained">保存する</Button></div>
+            </ListItem>
+          </List>
+        </nav>
+        <Divider />
+        <nav aria-label="secondary mailbox folders">
+          <List>
+            <ListItem css={classes.passInput} disablePadding>
+              <FormControl sx={{ m: 1, width: '80%' }} variant="standard">
+                <InputLabel css={classes.passLabel} htmlFor="standard-adornment-password">新しいパスワード</InputLabel>
+                <Input
+                  id="standard-adornment-password"
+                  type={values.showPassword ? 'text' : 'password'}
+                  value={values.password2}
+                  onChange={handleChange('password')}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+            </ListItem>
+          </List>
+        </nav>
+        <Divider />
+        <nav aria-label="main mailbox folders" >
+          <List>
+            <ListItem css={classes.passInput} disablePadding>
+              <FormControl sx={{ m: 1, width: '80%' }} variant="standard">
+              <InputLabel css={classes.passLabel} htmlFor="standard-adornment-password">新しいパスワード（確認）</InputLabel>
+                <Input
+                  id="standard-adornment-password"
+                  type={values.showPassword ? 'text' : 'password'}
+                  value={values.password3}
+                  onChange={handleChange('password')}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+            </ListItem>
+          </List>
+        </nav>
+        <Divider /><nav aria-label="main mailbox folders" >
+          <List>
+            <ListItem css={classes.passInput} disablePadding>
+              <Button variant="contained">変更</Button>
+            </ListItem>
+          </List>
+        </nav>
+        <Divider />
+      </Box>
     </div>
   );
 }
+
