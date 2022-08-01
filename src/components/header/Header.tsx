@@ -3,7 +3,8 @@ import Link from "next/link";
 import { css } from "@emotion/react";
 import PersonIcon from "@mui/icons-material/Person";
 import MobileBottomNav from "./MobileBottomNav";
-import MenuIcon from '@mui/icons-material/Menu';
+import HamburgerMenu from "./HamburgerMenu";
+
 
 export type Props = {
   name: string;
@@ -41,6 +42,12 @@ const classes = {
     font-size: 2.5rem;
     margin-left: 10%;
     letter-spacing: 1.8px;
+    @media (max-width: 780px) {
+    font-size: 2.0rem;
+    }
+    @media (max-width: 480px) {
+    font-size: 1.5rem;
+    }
   `,
   myPage: css`
     text-align: center;
@@ -68,8 +75,7 @@ const classes = {
   @media(min-width: 480px){
     display: none;
   }
-  text-align: center;
-  margin: 0 0 0 15%;
+  margin: 0 0 0 30%;
 `,
 };
 
@@ -93,7 +99,9 @@ const TopContent: NextPage<Props> = ({ name }) => {
         
       </div>
       
-      <div css={classes.MenuIcon}><MenuIcon style={{ fontSize: "50px", color: "#CDE9FE" }} /></div>
+      <div css={classes.MenuIcon}>
+        <HamburgerMenu />
+      </div>
       
       <MobileBottomNav />
     </header>

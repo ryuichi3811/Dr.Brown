@@ -56,7 +56,12 @@ const classes = {
   ul: css`
     margin-top: 70px;
   `,
-  menuIcon: css``,
+  footer: css`
+    position: absolute;
+    z-index: 1;
+    bottom: 3%;
+    left: 5%;
+  `,
 };
 
 const SideNav: NextPage = () => {
@@ -99,6 +104,11 @@ const SideNav: NextPage = () => {
           />
         </ul>
       </nav>
+
+      
+      <footer css={classes.footer}>
+        <p>&copy; 2022 Dr.Brown All Rights Reserved.</p>
+      </footer>
     </>
   );
 };

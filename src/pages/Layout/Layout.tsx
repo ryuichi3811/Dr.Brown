@@ -59,12 +59,6 @@ const classes = {
   width: 100%;
   position: relative;
   `,
-  footer: css`
-    position: absolute;
-    z-index: 1;
-    bottom: 1%;
-    left: 1.5%;
-  `,
 };
 
 const Layout: NextPage<Props> = ({ siteName, desc, bgDesign, children }) => {
@@ -103,9 +97,6 @@ const Layout: NextPage<Props> = ({ siteName, desc, bgDesign, children }) => {
         </div>
       </div>
 
-      <footer css={classes.footer}>
-        <p>&copy; 2022 Dr.Brown All Rights Reserved.</p>
-      </footer>
     </>
   );
 };
