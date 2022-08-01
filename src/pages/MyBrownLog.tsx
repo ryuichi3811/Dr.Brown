@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 import { NextPage } from "next";
+import MainMyBrownLog from "../components/myBrownLog/MainMyBrownLog";
 import Layout from "./Layout/Layout";
+
 
 const pageProps = {
   name: "過去の診断",
@@ -17,7 +19,9 @@ const MyBrownLog: NextPage = () => {
       desc={pageProps.desc}
       bgDesign={pageProps.bgImg}
     >
-      enter
+
+      <MainMyBrownLog />
+      
     </Layout>
   );
 };
